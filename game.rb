@@ -16,10 +16,10 @@ class Game
   end
 
   def evaluate(answer, num1, num2)
-    if answer == (num1 + num2)
-      puts "Player is correct!"
+    if answer != (num1 + num2)
+      false
     else
-      puts "Player is incorrect!"
+      true
     end
   end
 
@@ -36,13 +36,22 @@ class Game
     end
 
     def display_players 
-
       players.each_with_index do |player, index|
         puts "Player #{index + 1}: #{player.name} ------ Lives: #{player.life}"
       end
 
     end
 
+  end
+
+  def turn
+    player = @players[0]
+    answer = generate_question
+    if answer == false
+      puts "#{player.name} has #{player.life}/3 lives left"
+    else
+      puts "#{player.name} is correct!"
+    end
   end
 
 end
