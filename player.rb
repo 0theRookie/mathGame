@@ -7,6 +7,5 @@ class Player
   def lose_life
     self.life -= 1
   end
-  
 end
 
