@@ -47,10 +47,3 @@ class Game
 
 end
 
-
-
-game = Game.new
-game.collect_players
-game.display_players
-game.generate_question
-
